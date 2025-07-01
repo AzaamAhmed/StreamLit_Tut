@@ -28,8 +28,6 @@ def create_model(data):
     
     return model, scaler
 
-
-
 def get_clean_data():
     # Load your data
     data = pd.read_csv("StreamLit-app-Cancer\data\data.csv")
