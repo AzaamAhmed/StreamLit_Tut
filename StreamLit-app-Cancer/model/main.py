@@ -22,11 +22,11 @@ def create_model(data):
     
     return model, scaler
 
-
+#def test_model(model):
 
 def get_clean_data():
     # Load your data
-    data = pd.read_csv("data/data.csv")
+    data = pd.read_csv("StreamLit-app-Cancer\data\data.csv")
     print(data.head())
     
     data = data.drop(['Unnamed: 32', 'id'], axis=1)
@@ -42,13 +42,8 @@ def get_clean_data():
 
 def main():
     data = get_clean_data()
-    print(data.head())
     
-    st.title("Breast Cancer Detection")
-    
-    
-    
-
+    model, scaler = create_model(data)
 
 if __name__ == "__main__":
     main()
