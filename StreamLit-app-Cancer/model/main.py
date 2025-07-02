@@ -3,6 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
+import pickle as pickle
 
 import streamlit as st
 
@@ -48,6 +49,12 @@ def main():
     data = get_clean_data()
     
     model, scaler = create_model(data)
+    
+    with open("StreamLit-app-Cancer/model/model.pkl", "wb") as f:
+        pickle.dump(model, f)
+        
+    with open("StreamLit-app-Cancer/model/scaler.pkl", "wb") as f:
+        pickle.dump(scaler, f)
 
 
 if __name__ == "__main__":
